@@ -8,6 +8,7 @@ public class ConcesionarioAutosBackendApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(ConcesionarioAutosBackendApplication.class, args);
+        System.out.println("Hola mundo");
     }
 
 }
