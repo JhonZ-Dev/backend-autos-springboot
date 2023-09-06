@@ -1,5 +1,6 @@
 package com.example.concesionarioautosbackend.repositorio;
 
+import com.example.concesionarioautosbackend.modelos.AutoDTO;
 import com.example.concesionarioautosbackend.modelos.AutoEntidad;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
