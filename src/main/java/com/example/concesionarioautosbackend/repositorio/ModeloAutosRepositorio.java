@@ -1,4 +1,7 @@
 package com.example.concesionarioautosbackend.repositorio;
 
-public interface ModeloAutosRepositorio {
+import com.example.concesionarioautosbackend.modelos.ModelosAutosEntidad;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ModeloAutosRepositorio extends JpaRepository<ModelosAutosEntidad, Long> {
 }
