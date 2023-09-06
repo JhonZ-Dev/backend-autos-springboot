@@ -13,7 +13,7 @@ public class VentaDTO {
     private double precio;
     private UsuarioEntidad usuario;
     private AutoEntidad auto;
-    //private ModelosAutosEntidad modelos;
+    private ModelosAutosEntidad modelos;
     /*PARA ESTA CLASE SE USA UN DTO, CON EL OBJETIVO DE TRAER LOS USUARIOS CON SUS AUTOS*/
     //EJEMPLO,
     //Si se requiere mostrar el modelo del auto que le pertenece a Jhon//
