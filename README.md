@@ -16,5 +16,6 @@ Una clase DTO (Data Transfer Object) en Spring Boot se utiliza para transferir d
 ![venta](https://github.com/jhonZambrano1999/backend-autos-springboot/assets/79710173/f209654c-82c8-4eeb-96ed-6348b487d459)
 
 Para obtener el detalle de las ventas tambien se usa una clase DTO, ya que por una simple consulta solo trae los datos que le pertenecen a esa tabla, para entender mejor se hace lo sigueinte, mire la Figura. 
-![mapping](https://github.com/jhonZambrano1999/backend-autos-springboot/assets/79710173/35162884-63b7-4d30-b7ec-e0b725f3babf)
+![mapping2](https://github.com/jhonZambrano1999/backend-autos-springboot/assets/79710173/4a98fb20-3607-4450-8e8a-068469e06097)
+
 
