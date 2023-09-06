@@ -35,4 +35,18 @@ public class AutoEntidad {
     @OneToMany(mappedBy = "auto", cascade = CascadeType.ALL)
     private List<VentasEntidad> ventas;
 
+    @JsonIgnore
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "modelo",referencedColumnName = "modelo")
+    private ModelosAutosEntidad modelosAutosEntidad;
+
+    @JsonIgnore
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "marca",referencedColumnName = "marca")
+    private MarcasAutosEntidad marcasAutosEntidad;
+
+    @JsonIgnore
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "color",referencedColumnName = "color")
+    private ColorAutoEntidad colorAutoEntidad;
 }
