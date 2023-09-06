@@ -14,5 +14,15 @@ public class CitasDTO {
     private String identificacionUsuario;
     private String nombreUsuario;
     private String correoUsuario;
+    public CitasDTO(Long idcitas, String fechaEstimada, String horaEstimada, String descripcion, String correo, String identificacionUsuario, String nombreUsuario, String correoUsuario) {
+        this.idcitas = idcitas;
+        this.fechaEstimada = fechaEstimada;
+        this.horaEstimada = horaEstimada;
+        this.descripcion = descripcion;
+        this.correo = correo;
+        this.identificacionUsuario = identificacionUsuario;
+        this.nombreUsuario = nombreUsuario;
+        this.correoUsuario = correoUsuario;
+    }
 
 }
