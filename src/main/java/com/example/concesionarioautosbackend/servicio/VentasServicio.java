@@ -4,10 +4,12 @@ import com.example.concesionarioautosbackend.modelos.VentaDTO;
 import com.example.concesionarioautosbackend.modelos.VentasEntidad;
 import com.example.concesionarioautosbackend.repositorio.VentasRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class VentasServicio {
     @Autowired
     public VentasRepositorio ventasRepositorio;
