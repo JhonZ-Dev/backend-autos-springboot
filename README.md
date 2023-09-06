@@ -11,4 +11,6 @@ Sistema consecionario de autos, a continuación se presenta el diagrama entidad 
 
 # DTO
 Para este proyecto es necesario usar clases DTO, ya que como no hay una relación directa con las entidades, se necesita crear una o unas clases DTO para poder cumplir con los requerimientos.
-Una clase DTO (Data Transfer Object) en Spring Boot se utiliza para transferir datos entre diferentes capas de una aplicación, como la capa de controladores (controllers) y la capa de servicios (services) o la capa de servicios y la capa de acceso a datos (data access). Los DTO se utilizan para encapsular y transportar datos específicos entre estas capas sin exponer directamente los detalles de la estructura interna de los objetos de dominio o entidades de la base de datos. Aquí tienes algunas razones y ejemplos de por qué se utilizan clases DTO en Spring Boot
+Una clase DTO (Data Transfer Object) en Spring Boot se utiliza para transferir datos entre diferentes capas de una aplicación, como la capa de controladores (controllers) y la capa de servicios (services) o la capa de servicios y la capa de acceso a datos (data access). Los DTO se utilizan para encapsular y transportar datos específicos entre estas capas sin exponer directamente los detalles de la estructura interna de los objetos de dominio o entidades de la base de datos. Aquí tienes algunas razones y ejemplos de por qué se utilizan clases DTO en Spring Boot. Ejemplo:
+
+![venta](https://github.com/jhonZambrano1999/backend-autos-springboot/assets/79710173/f209654c-82c8-4eeb-96ed-6348b487d459)
