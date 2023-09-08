@@ -22,5 +22,7 @@ public class ModeloAutoService {
     public boolean existsByIModelo(String modelo) {
         return modeloAutosRepositorio.existsByModelo(modelo);
     }
-
+    public ModelosAutosEntidad obtenerAutosModelo(String modelo){
+        return modeloAutosRepositorio.findByModelo(modelo);
+    }
 }
