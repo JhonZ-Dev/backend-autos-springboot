@@ -87,6 +87,12 @@ public class UsuarioControlador {
         boolean existe = usuarioServicio.exsiteConCorreo(correo);
         return ResponseEntity.ok(existe);
     }
+    //metodo para verificar un usuario por su celular
+    @GetMapping("/verificarTelefono/{telefono}")
+    public ResponseEntity<Boolean> verificarTelefono(@PathVariable String telefono) {
+        boolean existe = usuarioServicio.existeConTelefono(telefono);
+        return ResponseEntity.ok(existe);
+    }
 
 
 
