@@ -75,6 +75,13 @@ public class UsuarioControlador {
         return ResponseEntity.ok("{\"message\": \"Usuario Actualizado Exitosamente.\"}");
     }
 
+    //eliminar por id
+    @DeleteMapping("/eliminar/{cedula}")
+    public void eliminarUnUsuarioPorIden(@PathVariable String cedula){
+        usuarioServicio.eliminar(cedula);
+    }
+
+
 
 
 
