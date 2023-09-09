@@ -81,6 +81,14 @@ public class UsuarioControlador {
         usuarioServicio.eliminar(cedula);
     }
 
+    //METODO PARA VERIFICAR UN USUARIO POR CORREO
+    @GetMapping("/verificarCorreo/{correo}")
+    public ResponseEntity<Boolean> verificarCorreo(@PathVariable String correo) {
+        boolean existe = usuarioServicio.exsiteConCorreo(correo);
+        return ResponseEntity.ok(existe);
+    }
+
+
 
 
 
