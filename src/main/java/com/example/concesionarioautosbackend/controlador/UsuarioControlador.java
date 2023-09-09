@@ -57,6 +57,24 @@ public class UsuarioControlador {
         return usuarioServicio.obtenerUsuarioPorIdentificacion(identificacion);
     }
 
+    //metodo para actualizar un usuario --UPDATE
+    @PutMapping("/actualizar/{cedula}")
+    public ResponseEntity<String> updateUser(@PathVariable String cedula, @RequestBody UsuarioEntidad usuarioEntidad) {
+        UsuarioEntidad usuarioExistente = usuarioServicio.obtenerUsuarioPorIdentificacion(cedula);
+
+        // Verificar si el usuario con el ID proporcionado existe
+        if (usuarioExistente == null) {
+            logger.warn("Intento de actualizar un usuario inexistente con identificación: {}", cedula);
+            return ResponseEntity.notFound().build();
+        }
+        //mantener el id generado
+        usuarioEntidad.setId_usuario(usuarioExistente.getId_usuario());
+        //usuarioEntidad.setIdentificacion(cedula);
+        usuarioServicio.saveUser(usuarioEntidad);
+        logger.info("Usuario actualizado exitosamente con ID: {}", cedula);
+        return ResponseEntity.ok("{\"message\": \"Usuario Actualizado Exitosamente.\"}");
+    }
+
 
 
 
