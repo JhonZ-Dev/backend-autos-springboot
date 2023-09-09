@@ -51,6 +51,12 @@ public class UsuarioControlador {
         return usuarioServicio.obtenerTodos();
     }
 
+    //metodo para traer un usuario por identificacion
+    @GetMapping("/usuariosByIdentificacion/{identificacion}")
+    public UsuarioEntidad obtenerUsuarioPorCedula(@PathVariable String identificacion){
+        return usuarioServicio.obtenerUsuarioPorIdentificacion(identificacion);
+    }
+
 
 
 
