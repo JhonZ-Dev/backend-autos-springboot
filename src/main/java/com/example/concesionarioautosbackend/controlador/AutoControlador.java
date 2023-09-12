@@ -86,6 +86,42 @@ public class AutoControlador {
         return autoServicio.obtenerTodos();
     }
 
+    @PutMapping("/update/{placa}")
+    public ResponseEntity<String> updateCar(@PathVariable String placa, @RequestBody NuevoAutoAgregar nuevoAutoActualizar) {
+        AutoEntidad autoExistente = autoServicio.obtenerAutoPorPlaca(placa);
+
+        if (autoExistente == null) {
+            logger.warn("Intento de actualizar un auto inexistente con placa: {}", placa);
+            return ResponseEntity.notFound().build();
+        }
+
+        String modelo = nuevoAutoActualizar.getModelo();
+        String anio = nuevoAutoActualizar.getAnio();
+        String color = nuevoAutoActualizar.getColor();
+        String marca = nuevoAutoActualizar.getMarca();
+
+        ModelosAutosEntidad modelosAutosEntidad = modeloAutoService.obtenerAutosModelo(modelo);
+        MarcasAutosEntidad marcasAutosEntidad = marcaAutoService.obtenerAutosMarca(marca);
+        ColorAutoEntidad colorAutoEntidad = colorServicio.obtenerAutosColor(color);
+
+        if (modelosAutosEntidad == null || marcasAutosEntidad == null || colorAutoEntidad == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Modelo, marca o color de auto no encontrado.");
+        }
+
+        // Actualiza los campos del auto existente
+        autoExistente.setModelosAutosEntidad(modelosAutosEntidad);
+        autoExistente.setMarcasAutosEntidad(marcasAutosEntidad);
+        autoExistente.setColorAutoEntidad(colorAutoEntidad);
+        autoExistente.setAnio(anio);
+
+        // Guarda el auto actualizado
+        autoServicio.guardar(autoExistente);
+
+        logger.info("Auto actualizado exitosamente con placa: {}", placa);
+        return ResponseEntity.ok("{\"message\": \"Auto actualizado correctamente.\"}");
+    }
+
+
 
 
 
