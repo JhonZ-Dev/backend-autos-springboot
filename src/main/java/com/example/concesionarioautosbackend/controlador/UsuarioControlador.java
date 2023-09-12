@@ -93,7 +93,7 @@ public class UsuarioControlador {
         boolean existe = usuarioServicio.existeConTelefono(telefono);
         return ResponseEntity.ok(existe);
     }
-    //Obtener los usuarios con sus autos 
+    //Obtener los usuarios con sus autos
     @GetMapping("/usuariosConAutos")
     public List<Object[]> obtenerUsuariosConAutos(){
         return usuarioServicio.obtenerUsuariosConAutos();
