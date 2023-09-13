@@ -121,10 +121,7 @@ public class AutoControlador {
         return ResponseEntity.ok("{\"message\": \"Auto actualizado correctamente.\"}");
     }
 
-    @GetMapping("/autosPorPlaca/{placa}")
-    public AutoEntidad obtenerAutosPorPlaca(@PathVariable String placa){
-        return autoServicio.obtenerAutoPorPlaca(placa);
-    }
+
 
     @GetMapping("/autosPorPlaca/{placa}")
     public AutoEntidad obtenerAutosPorPlaca(@PathVariable String placa){
@@ -154,6 +151,7 @@ public class AutoControlador {
         logger.info("Auto actualizado exitosamente con placa: {}", placa);
         return ResponseEntity.ok("{\"message\": \"Auto Actualizado Exitosamente.\"}");
     }
+
 
 
 
