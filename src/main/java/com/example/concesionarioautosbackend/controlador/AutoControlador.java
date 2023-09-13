@@ -152,6 +152,11 @@ public class AutoControlador {
         return ResponseEntity.ok("{\"message\": \"Auto Actualizado Exitosamente.\"}");
     }
 
+    @DeleteMapping("/eliminar/{placa}")
+    public void eliminar (@PathVariable String placa){
+        autoServicio.eliminar(placa);
+    }
+
 
 
 
