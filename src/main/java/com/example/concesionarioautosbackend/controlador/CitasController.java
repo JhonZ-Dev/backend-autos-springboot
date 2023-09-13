@@ -1,5 +1,6 @@
 package com.example.concesionarioautosbackend.controlador;
 
+import com.example.concesionarioautosbackend.modelos.CitasDTO;
 import com.example.concesionarioautosbackend.modelos.CitasEntidad;
 import com.example.concesionarioautosbackend.modelos.NuevaCitaRequest;
 import com.example.concesionarioautosbackend.modelos.UsuarioEntidad;
@@ -52,5 +53,9 @@ public class CitasController {
     public ResponseEntity<List<CitasEntidad>> obtenerTodasLasVentas() {
         List<CitasEntidad> citas = citasService.obtenerCitas();
         return ResponseEntity.ok(citas);
+    }
+    @GetMapping("/obtenerTodasCitas")
+    public List<CitasDTO> obtenerTodasLasCitas() {
+        return citasService.obtenerTodasLasCitas();
     }
 }
