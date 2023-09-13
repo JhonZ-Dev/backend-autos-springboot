@@ -89,5 +89,16 @@ public class CitasController {
     public CitasEntidad obtenerCitaPorId(@PathVariable Long idcitas){
         return citasService.obtenerCitaPorId(idcitas);
     }
+    @GetMapping("/encontrar/{id}")
+    public ResponseEntity<CitasDTO> obtenerCitaPorIdV1(@PathVariable Long id) {
+        CitasDTO cita = citasService.obtenerCitaDTOPorId(id);
+
+        if (cita != null) {
+            return ResponseEntity.ok(cita);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
 
 }
