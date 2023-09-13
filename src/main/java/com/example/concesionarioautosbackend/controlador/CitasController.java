@@ -85,4 +85,9 @@ public class CitasController {
         return ResponseEntity.ok("{\"message\": \"Cita Actualizado Exitosamente.\"}");
     }
 
+    @GetMapping("/obtnerCitasId/{idcitas}")
+    public CitasEntidad obtenerCitaPorId(@PathVariable Long idcitas){
+        return citasService.obtenerCitaPorId(idcitas);
+    }
+
 }
