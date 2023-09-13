@@ -13,6 +13,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/citas")
 @CrossOrigin(origins = "http://localhost:4200")
@@ -45,5 +47,10 @@ public class CitasController {
         citas.setDescripcion(descripcion);
         citasService.generarCita(citas);
         return ResponseEntity.ok("{\"message\": \"Cita agregada correctamente.\"}");
+    }
+    @GetMapping("/obtenerTodo")
+    public ResponseEntity<List<CitasEntidad>> obtenerTodasLasVentas() {
+        List<CitasEntidad> citas = citasService.obtenerCitas();
+        return ResponseEntity.ok(citas);
     }
 }
