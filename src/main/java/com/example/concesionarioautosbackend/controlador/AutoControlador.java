@@ -126,6 +126,36 @@ public class AutoControlador {
         return autoServicio.obtenerAutoPorPlaca(placa);
     }
 
+    @GetMapping("/autosPorPlaca/{placa}")
+    public AutoEntidad obtenerAutosPorPlaca(@PathVariable String placa){
+        return autoServicio.obtenerAutoPorPlaca(placa);
+    }
+
+    @PutMapping("/actualizar/{placa}")
+    public ResponseEntity<String> updateUser(@PathVariable String placa, @RequestBody AutoEntidad usuarioEntidad) {
+        AutoEntidad usuarioExistente = autoServicio.obtenerAutoPorPlaca(placa);
+
+        // Verificar si el auto con la placa proporcionada existe
+        if (usuarioExistente == null) {
+            logger.warn("Intento de actualizar un auto inexistente con placa: {}", placa);
+            return ResponseEntity.notFound().build();
+        }
+
+        // Actualizar los atributos del auto existente con los valores de usuarioEntidad
+        usuarioExistente.setAnio(usuarioEntidad.getAnio());
+        usuarioExistente.setModelosAutosEntidad(usuarioEntidad.getModelosAutosEntidad());
+        usuarioExistente.setMarcasAutosEntidad(usuarioEntidad.getMarcasAutosEntidad());
+        usuarioExistente.setColorAutoEntidad(usuarioEntidad.getColorAutoEntidad());
+
+        // Actualizar otros atributos
+        // Guardar el auto actualizado en la base de datos
+        autoServicio.guardar(usuarioExistente);
+
+        logger.info("Auto actualizado exitosamente con placa: {}", placa);
+        return ResponseEntity.ok("{\"message\": \"Auto Actualizado Exitosamente.\"}");
+    }
+
+
 
 
 
