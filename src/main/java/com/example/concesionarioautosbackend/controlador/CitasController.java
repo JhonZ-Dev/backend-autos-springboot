@@ -58,4 +58,31 @@ public class CitasController {
     public List<CitasDTO> obtenerTodasLasCitas() {
         return citasService.obtenerTodasLasCitas();
     }
+    @PutMapping("/actualizar/{id_citas}")
+    public ResponseEntity<String> updateUser(@PathVariable Long id_citas, @RequestBody CitasEntidad citasEntidad) {
+        CitasEntidad citaExiste = citasService.obtenerCitaPorId(id_citas);
+
+        // Verificar si la cita con el ID proporcionado existe
+        if (citaExiste == null) {
+            logger.warn("Intento de actualizar una cita inexistente con id: {}", id_citas);
+            return ResponseEntity.notFound().build();
+        }
+
+        // Obtener la instancia actual de UsuarioEntidad de la cita existente
+        UsuarioEntidad usuarioActual = citaExiste.getUsuario();
+
+        // Actualizar los campos que deseas modificar
+        citaExiste.setUsuario(usuarioActual);  // Mantener la relación existente
+        citaExiste.setCorreo(citasEntidad.getCorreo());
+        citaExiste.setDescripcion(citasEntidad.getDescripcion());
+        citaExiste.setHora_estimada(citasEntidad.getHora_estimada());
+        citaExiste.setFecha_estimada(citasEntidad.getFecha_estimada());
+
+        // Guardar el cita actualizado en la base de datos
+        citasService.generarCita(citaExiste);
+
+        logger.info("Cita actualizada exitosamente con id: {}", id_citas);
+        return ResponseEntity.ok("{\"message\": \"Cita Actualizado Exitosamente.\"}");
+    }
+
 }
