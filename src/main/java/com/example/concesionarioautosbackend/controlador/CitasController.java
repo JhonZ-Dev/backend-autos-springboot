@@ -100,5 +100,11 @@ public class CitasController {
         }
     }
 
+    @DeleteMapping("/eliminar/{idcitas}")
+    public void eliminarCitas(@PathVariable Long idcitas){
+        citasService.deleteByIdcitas(idcitas);
+    }
+
+
 
 }
