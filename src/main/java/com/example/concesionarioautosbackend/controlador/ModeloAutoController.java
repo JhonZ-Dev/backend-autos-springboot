@@ -32,4 +32,9 @@ public class ModeloAutoController {
         modeloAutoService.guardar(modelosAutosEntidad);
         return ResponseEntity.ok("{\"message\": \"Modelo Guardado Exitosamente.\"}");
     }
+    private Long generarNumeroAleatorio() {
+        // Lógica para generar el número aleatorio aquí
+        return (long) (Math.random() * 100000);
+    }
+
 }
