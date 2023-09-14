@@ -3,6 +3,7 @@ package com.example.concesionarioautosbackend.controlador;
 import com.example.concesionarioautosbackend.modelos.ColorAutoEntidad;
 import com.example.concesionarioautosbackend.servicio.ColorServicio;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,6 +28,12 @@ public class ColorControlador {
     private Long generarNumeroAleatorio() {
         // Lógica para generar el número aleatorio aquí
         return (long) (Math.random() * 100000);
+    }
+    @PostMapping("/guardarColor")
+    public ResponseEntity<String> saveModelo(@RequestBody ColorAutoEntidad colorAutoEntidad) {
+        colorAutoEntidad.setId_color(generarNumeroAleatorio());
+        colorServicio.guardar(colorAutoEntidad);
+        return ResponseEntity.ok("{\"message\": \"Color guardado Exitosamente.\"}");
     }
 
 }
