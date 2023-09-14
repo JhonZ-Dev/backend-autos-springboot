@@ -38,5 +38,6 @@ public class ModeloAutoController {
     }
 
     /*Con estos estamos haciendo el CRUD*/
+    /*Es importante resaltar que se utiliza el generar numero aleartorio porque srping boot netamente necesita un ID autoincremental*/
 
 }
