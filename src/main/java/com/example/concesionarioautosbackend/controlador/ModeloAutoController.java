@@ -37,4 +37,6 @@ public class ModeloAutoController {
         return (long) (Math.random() * 100000);
     }
 
+    /*Con estos estamos haciendo el CRUD*/
+
 }
