@@ -24,4 +24,9 @@ public class ColorControlador {
         return colorServicio.listarColores();
     }
 
+    private Long generarNumeroAleatorio() {
+        // Lógica para generar el número aleatorio aquí
+        return (long) (Math.random() * 100000);
+    }
+
 }
