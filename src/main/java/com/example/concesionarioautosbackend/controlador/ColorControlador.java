@@ -5,6 +5,8 @@ import com.example.concesionarioautosbackend.servicio.ColorServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/color")
@@ -16,4 +18,10 @@ public class ColorControlador {
     public ColorAutoEntidad guardar(@RequestBody ColorAutoEntidad colorAutoEntidad){
         return colorServicio.guardar(colorAutoEntidad);
     }
+
+    @GetMapping("/traerColor")
+    public List<ColorAutoEntidad> listarModelos() {
+        return colorServicio.listarColores();
+    }
+
 }
