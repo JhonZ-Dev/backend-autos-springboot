@@ -1,5 +1,6 @@
 package com.example.concesionarioautosbackend.controlador;
 
+import com.example.concesionarioautosbackend.modelos.ColorAutoEntidad;
 import com.example.concesionarioautosbackend.servicio.ColorServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
