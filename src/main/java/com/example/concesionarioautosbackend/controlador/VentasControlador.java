@@ -1,5 +1,6 @@
 package com.example.concesionarioautosbackend.controlador;
 
+import com.example.concesionarioautosbackend.modelos.AutoEntidad;
 import com.example.concesionarioautosbackend.modelos.NuevaVentaRequest;
 import com.example.concesionarioautosbackend.modelos.UsuarioEntidad;
 import com.example.concesionarioautosbackend.modelos.VentaDTO;
