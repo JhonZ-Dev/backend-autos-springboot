@@ -22,4 +22,8 @@ public class MarcaAutoController {
     public List<MarcasAutosEntidad> listarModelos() {
         return marcaAutoService.listarMarcas();
     }
+    private Long generarNumeroAleatorio() {
+        // Lógica para generar el número aleatorio aquí
+        return (long) (Math.random() * 100000);
+    }
 }
