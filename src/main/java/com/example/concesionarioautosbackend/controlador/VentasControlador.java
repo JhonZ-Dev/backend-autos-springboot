@@ -1,5 +1,6 @@
 package com.example.concesionarioautosbackend.controlador;
 
+import com.example.concesionarioautosbackend.servicio.VentasServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,4 +14,5 @@ public class VentasControlador {
 
     @Autowired
     public VentasServicio ventasService;
+    
 }
