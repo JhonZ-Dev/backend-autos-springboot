@@ -14,5 +14,5 @@ public class VentasControlador {
 
     @Autowired
     public VentasServicio ventasService;
-    
+
 }
