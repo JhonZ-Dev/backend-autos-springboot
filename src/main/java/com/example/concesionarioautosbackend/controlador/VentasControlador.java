@@ -1,6 +1,8 @@
 package com.example.concesionarioautosbackend.controlador;
 
 
+import org.springframework.web.bind.annotation.RestController;
+
 import java.time.LocalDate;
 import java.util.List;
 
